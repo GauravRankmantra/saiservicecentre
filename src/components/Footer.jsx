@@ -1,6 +1,7 @@
 import React from 'react';
 import { Facebook, Twitter, Instagram, Phone, Mail, MapPin } from 'lucide-react'; // Optional: Using lucide-react
 import logo from "../assets/logo.jpg";
+import {Link} from "react-router-dom"
 const Footer = () => {
   return (
     <footer className="bg-gray-100 pt-10">
@@ -17,15 +18,15 @@ const Footer = () => {
           </p>
           {/* Social Icons */}
           <div className="flex gap-4 mt-4">
-            <a href="#" className="bg-white p-2 rounded-full shadow hover:text-orange-500 transition">
+            <Link to="#" className="bg-white p-2 rounded-full shadow hover:text-orange-500 transition">
               <Facebook size={20} />
-            </a>
-            <a href="#" className="bg-white p-2 rounded-full shadow hover:text-orange-500 transition">
+            </Link>
+            <Link to="#" className="bg-white p-2 rounded-full shadow hover:text-orange-500 transition">
               <Twitter size={20} />
-            </a>
-            <a href="#" className="bg-white p-2 rounded-full shadow hover:text-orange-500 transition">
+            </Link>
+            <Link to="#" className="bg-white p-2 rounded-full shadow hover:text-orange-500 transition">
               <Instagram size={20} />
-            </a>
+            </Link>
           </div>
         </div>
 
@@ -33,10 +34,10 @@ const Footer = () => {
         <div>
           <h3 className="text-lg font-semibold mb-4 text-gray-800">Useful Links</h3>
           <ul className="space-y-3 text-gray-600">
-            <li><a href="#" className="hover:text-orange-500 transition">Home</a></li>
-            <li><a href="#" className="hover:text-orange-500 transition">About</a></li>
-            <li><a href="#" className="hover:text-orange-500 transition">Services</a></li>
-            <li><a href="#" className="hover:text-orange-500 transition">Contact</a></li>
+            <li><Link to="/" className="hover:text-orange-500 transition">Home</Link></li>
+            <li><Link to="/about" className="hover:text-orange-500 transition">About</Link></li>
+            <li><Link to="/services/ro-repair" className="hover:text-orange-500 transition">Services</Link></li>
+            <li><Link to="/contact" className="hover:text-orange-500 transition">Contact</Link></li>
           </ul>
         </div>
 
@@ -44,11 +45,11 @@ const Footer = () => {
         <div>
           <h3 className="text-lg font-semibold mb-4 text-gray-800">Our Services</h3>
           <ul className="space-y-3 text-gray-600">
-            <li><a href="#" className="hover:text-orange-500 transition">RO Repair Services</a></li>
-            <li><a href="#" className="hover:text-orange-500 transition">AC Repair Services</a></li>
-            <li><a href="#" className="hover:text-orange-500 transition">Refrigerator Repair</a></li>
-            <li><a href="#" className="hover:text-orange-500 transition">Microwave-Oven Repair Services</a></li>
-            <li><a href="#" className="hover:text-orange-500 transition">Washing Machine Service</a></li>
+            <li><Link to="/services/ro-repair" className="hover:text-orange-500 transition">RO Repair Services</Link></li>
+            <li><Link to="/services/ac-repair" className="hover:text-orange-500 transition">AC Repair Services</Link></li>
+            <li><Link to="/services/refrigerator-repair" className="hover:text-orange-500 transition">Refrigerator Repair</Link></li>
+            <li><Link to="/services/microwave-repair" className="hover:text-orange-500 transition">Microwave-Oven Repair Services</Link></li>
+            <li><Link to="/services/washing-machine-repair" className="hover:text-orange-500 transition">Washing Machine Service</Link></li>
           </ul>
         </div>
 
