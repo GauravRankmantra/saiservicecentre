@@ -254,10 +254,8 @@ const Navbar = () => {
             <img
               src={logo}
               alt="Sai Service Centre Logo"
-              className="w-[10rem] mr-2"
+              className="w-[8rem] mr-2"
             />{" "}
-            {/* Replace /logo.png with your actual logo path */}
-            {/* <span className="font-bold text-lg text-gray-800">Sai Service Centre</span> */}
           </div>
 
           {/* Mobile Button */}
@@ -327,8 +325,10 @@ const Navbar = () => {
 
           {/* Desktop "Get a Quote" Button */}
           <div className="hidden md:block">
-            <button  onClick={openModal}
-            className="bg-orange-500 cursor-pointer text-white py-4 px-6 rounded-full hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-orange-400">
+            <button
+              onClick={openModal}
+              className="bg-orange-500 cursor-pointer text-white py-4 px-6 rounded-full hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-orange-400"
+            >
               GET A QUOTE
             </button>
           </div>
@@ -428,9 +428,7 @@ const Navbar = () => {
             </div> */}
           </div>
         )}
-        <div
-        onClick={openModal}
-        className="flex justify-center">
+        <div onClick={openModal} className="flex justify-center">
           <button className="md:hidden flex cursor-pointer justify-center bg-orange-500 text-white py-4 px-6 rounded-full hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-orange-400">
             GET A QUOTE
           </button>
