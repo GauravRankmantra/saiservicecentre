@@ -95,6 +95,7 @@ const Navbar = () => {
                             onClick={() => setIsOpen(false)}
                           >
                             {item.name}
+                            
                           </Link>
                         ))}
                       </div>

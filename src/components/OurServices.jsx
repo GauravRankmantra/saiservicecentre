@@ -1,36 +1,53 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React from "react";
+import { motion } from "framer-motion";
 import ac from "../assets/Home/AcRepair.jpg";
 import fridge from "../assets/Home/FridgeRepair.jpg";
 import microwave from "../assets/Home/MicrowaveRepair.jpg";
 import ro from "../assets/Home/RoRepair.jpg";
 import washingMachine from "../assets/Home/WashingRepair.jpg";
+import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const serviceData = [
   {
     imageUrl: ro,
-    heading: 'RO Repair Services',
-    description: 'Ensure pure water with our expert RO repair. We keep your purification system in top condition for healthy hydration.',
+    id: "ro-repair",
+    path: "/services/ro-repair",
+    heading: "RO Repair Services",
+    description:
+      "Ensure pure water with our expert RO repair. We keep your purification system in top condition for healthy hydration.",
   },
   {
     imageUrl: ac,
-    heading: 'AC Repair Services',
-    description: 'Stay cool and comfortable! Our top-notch AC repair services guarantee efficient and effective cooling for your space.',
+    id: "ac-repair",
+    path: "/services/ac-repair",
+    heading: "AC Repair Services",
+    description:
+      "Stay cool and comfortable! Our top-notch AC repair services guarantee efficient and effective cooling for your space.",
   },
   {
     imageUrl: fridge,
-    heading: 'Refrigerator Repair Services',
-    description: 'Keep your food fresh and your kitchen running smoothly with our comprehensive and quick fridge repair solutions.',
+    id: "refrigerator-repair",
+    path: "/services/refrigerator-repair",
+    heading: "Refrigerator Repair Services",
+    description:
+      "Keep your food fresh and your kitchen running smoothly with our comprehensive and quick fridge repair solutions.",
   },
   {
     imageUrl: microwave,
-    heading: 'Microwave Oven Repair Services',
-    description: 'Get your microwave back to cooking perfect meals! Our expert oven repair services ensure your appliance is ready when you are.',
+    id: "microwave-repair",
+    path: "/services/microwave-repair",
+    heading: "Microwave Oven Repair Services",
+    description:
+      "Get your microwave back to cooking perfect meals! Our expert oven repair services ensure your appliance is ready when you are.",
   },
   {
     imageUrl: washingMachine,
-    heading: 'Washing Machine Repair Services',
-    description: 'Say goodbye to laundry day stress! Our reliable washing machine repair services will have your clothes clean with no hassle.',
+    id: "washing-machine-repair",
+    path: "/services/washing-machine-repair",
+    heading: "Washing Machine Repair Services",
+    description:
+      "Say goodbye to laundry day stress! Our reliable washing machine repair services will have your clothes clean with no hassle.",
   },
 ];
 
@@ -52,12 +69,13 @@ const serviceCardVariants = {
     y: 0,
     transition: {
       duration: 0.6,
-      ease: 'easeOut',
+      ease: "easeOut",
     },
   },
 };
 
 const OurServices = () => {
+  const navigate = useNavigate();
   return (
     <motion.div
       className="md:w-[90%] lg:w-[85%] xl:w-[80%] mx-auto py-20 rounded-xl shadow overflow-hidden"
@@ -73,7 +91,9 @@ const OurServices = () => {
             Our Expertise, Your Peace of Mind
           </h2>
           <p className="text-lg text-gray-700 leading-relaxed md:w-[60%] mx-auto">
-            Our skilled technicians are masters at diagnosing and resolving appliance issues with precision and care, ensuring your devices are back to their best.
+            Our skilled technicians are masters at diagnosing and resolving
+            appliance issues with precision and care, ensuring your devices are
+            back to their best.
           </p>
           <div className="w-16 h-1.5 bg-orange-500 mx-auto mt-6 rounded-full"></div>
         </div>
@@ -93,12 +113,12 @@ const OurServices = () => {
                 className="relative h-48 md:h-56 overflow-hidden"
                 initial={{ scale: 1, opacity: 0 }}
                 whileInView={{ opacity: 1, scale: 1.05 }}
-                transition={{ duration: 0.6, ease: 'easeOut' }}
+                transition={{ duration: 0.6, ease: "easeOut" }}
               >
                 <img
                   src={service.imageUrl}
                   alt={service.heading}
-                  loading='lazy'
+                  loading="lazy"
                   className="w-full h-full object-cover"
                 />
               </motion.div>
@@ -109,6 +129,15 @@ const OurServices = () => {
                 <p className="text-gray-600 text-sm leading-relaxed">
                   {service.description}
                 </p>
+              </div>
+              <div className="flex justify-center">
+                <Link
+                  key={service.id}
+                  to={service.path}
+                  className=" bg-blue-900 hover:bg-blue-950 text-white rounded text-lg px-4 py-1 cursor-pointer my-2"
+                >
+                  Explore
+                </Link>
               </div>
             </motion.div>
           ))}
