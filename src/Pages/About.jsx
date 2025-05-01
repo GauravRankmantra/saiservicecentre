@@ -63,6 +63,7 @@ const About = () => {
         <img
           src={serviceImg}
           alt="Service Centre"
+          loading="lazy"
           className="rounded-lg shadow-2xl"
           data-aos="fade-left"
         />
