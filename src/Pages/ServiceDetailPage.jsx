@@ -1,5 +1,5 @@
 import React from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import acRepair from "../assets/repair/ac2.jpg";
 import fridgeRepair from "../assets/repair/fridge2.jpg";
 import microwaveRepair from "../assets/repair/microwave2.jpg";
@@ -40,46 +40,48 @@ const ServiceDetailPage = () => {
       ],
       content: (
         <>
-          <h2 className="text-2xl text-orange-500 font-semibold mb-4">
-            RO Repair Services
-          </h2>
-          <p className="mb-2">
-            At Sai Service Centre, we understand the importance of clean and
-            safe drinking water. Our specialized RO repair services cater to all
-            major brands and models.
-          </p>
-          <ul className="bg-white rounded-lg shadow-lg overflow-hidden border border-gray-200">
-            <li className="px-6 py-4 border-b border-gray-200 flex items-center space-x-3 hover:bg-gray-50 transition-all">
-              <FaCheckCircle className="h-6 w-6 text-blue-500" />
-              <span className="text-lg font-semibold">
-                Diagnosis of all RO system problems
-              </span>
-            </li>
-            <li className="px-6 py-4 border-b border-gray-200 flex items-center space-x-3 hover:bg-gray-50 transition-all">
-              <FaWrench className="h-6 w-6 text-green-500" />
-              <span className="text-lg font-semibold">
-                Repair and replacement of filters, pumps, and membranes
-              </span>
-            </li>
-            <li className="px-6 py-4 border-b border-gray-200 flex items-center space-x-3 hover:bg-gray-50 transition-all">
-              <FaTint className="h-6 w-6 text-red-500" />
-              <span className="text-lg font-semibold">
-                Leak detection and fixing
-              </span>
-            </li>
-            <li className="px-6 py-4 border-b border-gray-200 flex items-center space-x-3 hover:bg-gray-50 transition-all">
-              <FaRegCircle className="h-6 w-6 text-yellow-500" />
-              <span className="text-lg font-semibold">
-                Water quality testing
-              </span>
-            </li>
-            <li className="px-6 py-4 flex items-center space-x-3 hover:bg-gray-50 transition-all">
-              <FaCog className="h-6 w-6 text-indigo-500" />
-              <span className="text-lg font-semibold">
-                Preventive maintenance services
-              </span>
-            </li>
-          </ul>
+          <div className="border border-blue-500/30 rounded-lg p-2 shadow-lg">
+            <h2 className="text-2xl text-orange-500 font-semibold mb-4">
+              RO Repair Services
+            </h2>
+            <p className="my-5">
+              At Sai Service Centre, we understand the importance of clean and
+              safe drinking water. Our specialized RO repair services cater to
+              all major brands and models.
+            </p>
+            <ul className="bg-white my-5 overflow-hidden border border-gray-100">
+              <li className="px-6 py-4 border-b border-gray-200 flex items-center space-x-3 hover:bg-gray-50 transition-all">
+                <FaCheckCircle className="h-6 w-6 text-blue-500" />
+                <span className="text-lg font-semibold">
+                  Diagnosis of all RO system problems
+                </span>
+              </li>
+              <li className="px-6 py-4 border-b border-gray-200 flex items-center space-x-3 hover:bg-gray-50 transition-all">
+                <FaWrench className="h-6 w-6 text-green-500" />
+                <span className="text-lg font-semibold">
+                  Repair and replacement of filters, pumps, and membranes
+                </span>
+              </li>
+              <li className="px-6 py-4 border-b border-gray-200 flex items-center space-x-3 hover:bg-gray-50 transition-all">
+                <FaTint className="h-6 w-6 text-blue-500" />
+                <span className="text-lg font-semibold">
+                  Leak detection and fixing
+                </span>
+              </li>
+              <li className="px-6 py-4 border-b border-gray-200 flex items-center space-x-3 hover:bg-gray-50 transition-all">
+                <FaRegCircle className="h-6 w-6 text-yellow-500" />
+                <span className="text-lg font-semibold">
+                  Water quality testing
+                </span>
+              </li>
+              <li className="px-6 py-4 flex items-center space-x-3 hover:bg-gray-50 transition-all">
+                <FaCog className="h-6 w-6 text-indigo-500" />
+                <span className="text-lg font-semibold">
+                  Preventive maintenance services
+                </span>
+              </li>
+            </ul>
+          </div>
 
           <p className="mt-4">
             Our technicians are highly trained and equipped with the latest
@@ -108,52 +110,54 @@ const ServiceDetailPage = () => {
       ],
       content: (
         <>
-          <h2 className="text-2xl text-orange-500 font-semibold mb-4">
-            AC Repair Services
-          </h2>
-          <p className="mb-2">
-            Is your AC not cooling effectively, making strange noises, or
-            leaking water? Our expert AC repair services at Sai Service Centre
-            are here to help.
-          </p>
-          <ul className="bg-white rounded-lg shadow-lg overflow-hidden border border-gray-200">
-            <li className="px-6 py-4 border-b border-gray-200 flex items-center space-x-3 hover:bg-gray-50 transition-all">
-              <FaDiagnoses className="h-6 w-6 text-blue-500" />
-              <span className="text-lg font-semibold">
-                Diagnosis of AC problems
-              </span>
-            </li>
-            <li className="px-6 py-4 border-b border-gray-200 flex items-center space-x-3 hover:bg-gray-50 transition-all">
-              <FaIceCream className="h-6 w-6 text-green-500" />
-              <span className="text-lg font-semibold">
-                Refrigerant leak detection and repair
-              </span>
-            </li>
-            <li className="px-6 py-4 border-b border-gray-200 flex items-center space-x-3 hover:bg-gray-50 transition-all">
-              <FaCompress className="h-6 w-6 text-red-500" />
-              <span className="text-lg font-semibold">
-                Compressor repair and replacement
-              </span>
-            </li>
-            <li className="px-6 py-4 border-b border-gray-200 flex items-center space-x-3 hover:bg-gray-50 transition-all">
-              <FaFan className="h-6 w-6 text-yellow-500" />
-              <span className="text-lg font-semibold">
-                Fan motor repair and replacement
-              </span>
-            </li>
-            <li className="px-6 py-4 border-b border-gray-200 flex items-center space-x-3 hover:bg-gray-50 transition-all">
-              <FaFilter className="h-6 w-6 text-indigo-500" />
-              <span className="text-lg font-semibold">
-                Filter cleaning and replacement
-              </span>
-            </li>
-            <li className="px-6 py-4 flex items-center space-x-3 hover:bg-gray-50 transition-all">
-              <FaThermometerHalf className="h-6 w-6 text-pink-500" />
-              <span className="text-lg font-semibold">
-                Thermostat repair and replacement
-              </span>
-            </li>
-          </ul>
+          <div className="border border-blue-500/30 rounded-lg p-2 shadow-lg">
+            <h2 className="text-2xl text-orange-500 font-semibold mb-4">
+              AC Repair Services
+            </h2>
+            <p className="my-5">
+              Is your AC not cooling effectively, making strange noises, or
+              leaking water? Our expert AC repair services at Sai Service Centre
+              are here to help.
+            </p>
+            <ul className="bg-white my-5 rounded-lg shadow-lg overflow-hidden border border-gray-200">
+              <li className="px-6 py-4 border-b border-gray-200 flex items-center space-x-3 hover:bg-gray-50 transition-all">
+                <FaDiagnoses className="h-6 w-6 text-blue-500" />
+                <span className="text-lg font-semibold">
+                  Diagnosis of AC problems
+                </span>
+              </li>
+              <li className="px-6 py-4 border-b border-gray-200 flex items-center space-x-3 hover:bg-gray-50 transition-all">
+                <FaIceCream className="h-6 w-6 text-green-500" />
+                <span className="text-lg font-semibold">
+                  Refrigerant leak detection and repair
+                </span>
+              </li>
+              <li className="px-6 py-4 border-b border-gray-200 flex items-center space-x-3 hover:bg-gray-50 transition-all">
+                <FaCompress className="h-6 w-6 text-red-500" />
+                <span className="text-lg font-semibold">
+                  Compressor repair and replacement
+                </span>
+              </li>
+              <li className="px-6 py-4 border-b border-gray-200 flex items-center space-x-3 hover:bg-gray-50 transition-all">
+                <FaFan className="h-6 w-6 text-yellow-500" />
+                <span className="text-lg font-semibold">
+                  Fan motor repair and replacement
+                </span>
+              </li>
+              <li className="px-6 py-4 border-b border-gray-200 flex items-center space-x-3 hover:bg-gray-50 transition-all">
+                <FaFilter className="h-6 w-6 text-indigo-500" />
+                <span className="text-lg font-semibold">
+                  Filter cleaning and replacement
+                </span>
+              </li>
+              <li className="px-6 py-4 flex items-center space-x-3 hover:bg-gray-50 transition-all">
+                <FaThermometerHalf className="h-6 w-6 text-pink-500" />
+                <span className="text-lg font-semibold">
+                  Thermostat repair and replacement
+                </span>
+              </li>
+            </ul>
+          </div>
           <p className="mb-2">
             We are committed to providing prompt and efficient AC repair
             services. Our technicians are experienced in handling all types of
@@ -182,44 +186,46 @@ const ServiceDetailPage = () => {
       ],
       content: (
         <>
-          <h2 className="text-2xl text-orange-500 font-semibold mb-4">
-            Refrigerator Repair
-          </h2>
-          <p className="mb-2">
-            A malfunctioning refrigerator can disrupt your daily life. At Sai
-            Service Centre, we offer quick and reliable repair services for all
-            types of refrigerators.
-          </p>
-          <ul className="bg-white rounded-lg shadow-lg overflow-hidden border border-gray-200">
-            <li className="px-6 py-4 border-b border-gray-200 flex items-center space-x-3 hover:bg-gray-50 transition-all">
-              <FaDiagnoses className="h-6 w-6 text-blue-500" />
-              <span className="text-lg font-semibold">
-                Diagnosis of refrigerator issues
-              </span>
-            </li>
-            <li className="px-6 py-4 border-b border-gray-200 flex items-center space-x-3 hover:bg-gray-50 transition-all">
-              <FaSnowflake className="h-6 w-6 text-green-500" />
-              <span className="text-lg font-semibold">
-                Repair of cooling problems
-              </span>
-            </li>
-            <li className="px-6 py-4 border-b border-gray-200 flex items-center space-x-3 hover:bg-gray-50 transition-all">
-              <FaCompress className="h-6 w-6 text-red-500" />
-              <span className="text-lg font-semibold">
-                Replacement of faulty compressors, motors, and thermostats
-              </span>
-            </li>
-            <li className="px-6 py-4 border-b border-gray-200 flex items-center space-x-3 hover:bg-gray-50 transition-all">
-              <FaTint className="h-6 w-6 text-blue-500" />
-              <span className="text-lg font-semibold">Leak repair</span>
-            </li>
-            <li className="px-6 py-4 flex items-center space-x-3 hover:bg-gray-50 transition-all">
-              <FaDoorOpen className="h-6 w-6 text-yellow-500" />
-              <span className="text-lg font-semibold">
-                Door seal replacement
-              </span>
-            </li>
-          </ul>
+          <div className="border border-blue-500/30 rounded-lg p-2 shadow-lg">
+            <h2 className="text-2xl text-orange-500 font-semibold mb-4">
+              Refrigerator Repair
+            </h2>
+            <p className="my-5">
+              A malfunctioning refrigerator can disrupt your daily life. At Sai
+              Service Centre, we offer quick and reliable repair services for
+              all types of refrigerators.
+            </p>
+            <ul className="bg-white my-5 rounded-lg shadow-lg overflow-hidden border border-gray-200">
+              <li className="px-6 py-4 border-b border-gray-200 flex items-center space-x-3 hover:bg-gray-50 transition-all">
+                <FaDiagnoses className="h-6 w-6 text-blue-500" />
+                <span className="text-lg font-semibold">
+                  Diagnosis of refrigerator issues
+                </span>
+              </li>
+              <li className="px-6 py-4 border-b border-gray-200 flex items-center space-x-3 hover:bg-gray-50 transition-all">
+                <FaSnowflake className="h-6 w-6 text-green-500" />
+                <span className="text-lg font-semibold">
+                  Repair of cooling problems
+                </span>
+              </li>
+              <li className="px-6 py-4 border-b border-gray-200 flex items-center space-x-3 hover:bg-gray-50 transition-all">
+                <FaCompress className="h-6 w-6 text-red-500" />
+                <span className="text-lg font-semibold">
+                  Replacement of faulty compressors, motors, and thermostats
+                </span>
+              </li>
+              <li className="px-6 py-4 border-b border-gray-200 flex items-center space-x-3 hover:bg-gray-50 transition-all">
+                <FaTint className="h-6 w-6 text-blue-500" />
+                <span className="text-lg font-semibold">Leak repair</span>
+              </li>
+              <li className="px-6 py-4 flex items-center space-x-3 hover:bg-gray-50 transition-all">
+                <FaDoorOpen className="h-6 w-6 text-yellow-500" />
+                <span className="text-lg font-semibold">
+                  Door seal replacement
+                </span>
+              </li>
+            </ul>
+          </div>
           <p className="mb-2">
             Our goal is to restore your refrigerator's functionality as soon as
             possible. Our skilled technicians come equipped with the necessary
@@ -247,41 +253,43 @@ const ServiceDetailPage = () => {
       ],
       content: (
         <>
-          <h2 className="text-2xl text-orange-500 font-semibold mb-4">
-            Microwave-Oven Repair
-          </h2>
-          <p className="mb-2">
-            If your microwave oven is not heating, sparking, or has any other
-            issues, Sai Service Centre offers expert repair services to get it
-            working again.
-          </p>
-          <ul className="bg-white rounded-lg shadow-lg overflow-hidden border border-gray-200">
-            <li className="px-6 py-4 border-b border-gray-200 flex items-center space-x-3 hover:bg-gray-50 transition-all">
-              <FaWrench className="h-6 w-6 text-blue-500" />
-              <span className="text-lg font-semibold">
-                Diagnosis of microwave problems
-              </span>
-            </li>
-            <li className="px-6 py-4 border-b border-gray-200 flex items-center space-x-3 hover:bg-gray-50 transition-all">
-              <FaBolt className="h-6 w-6 text-green-500" />
-              <span className="text-lg font-semibold">
-                Repair and replacement of magnetrons, transformers, and
-                capacitors
-              </span>
-            </li>
-            <li className="px-6 py-4 border-b border-gray-200 flex items-center space-x-3 hover:bg-gray-50 transition-all">
-              <FaLock className="h-6 w-6 text-red-500" />
-              <span className="text-lg font-semibold">
-                Fixing door latch issues
-              </span>
-            </li>
-            <li className="px-6 py-4 border-b border-gray-200 flex items-center space-x-3 hover:bg-gray-50 transition-all">
-              <FaRegKeyboard className="h-6 w-6 text-yellow-500" />
-              <span className="text-lg font-semibold">
-                Control panel repair
-              </span>
-            </li>
-          </ul>
+          <div className="border border-blue-500/30 rounded-lg p-2 shadow-lg">
+            <h2 className="text-2xl text-orange-500 font-semibold mb-4">
+              Microwave-Oven Repair
+            </h2>
+            <p className="my-5">
+              If your microwave oven is not heating, sparking, or has any other
+              issues, Sai Service Centre offers expert repair services to get it
+              working again.
+            </p>
+            <ul className="bg-white my-5 rounded-lg shadow-lg overflow-hidden border border-gray-200">
+              <li className="px-6 py-4 border-b border-gray-200 flex items-center space-x-3 hover:bg-gray-50 transition-all">
+                <FaWrench className="h-6 w-6 text-blue-500" />
+                <span className="text-lg font-semibold">
+                  Diagnosis of microwave problems
+                </span>
+              </li>
+              <li className="px-6 py-4 border-b border-gray-200 flex items-center space-x-3 hover:bg-gray-50 transition-all">
+                <FaBolt className="h-6 w-6 text-green-500" />
+                <span className="text-lg font-semibold">
+                  Repair and replacement of magnetrons, transformers, and
+                  capacitors
+                </span>
+              </li>
+              <li className="px-6 py-4 border-b border-gray-200 flex items-center space-x-3 hover:bg-gray-50 transition-all">
+                <FaLock className="h-6 w-6 text-red-500" />
+                <span className="text-lg font-semibold">
+                  Fixing door latch issues
+                </span>
+              </li>
+              <li className="px-6 py-4 border-b border-gray-200 flex items-center space-x-3 hover:bg-gray-50 transition-all">
+                <FaRegKeyboard className="h-6 w-6 text-yellow-500" />
+                <span className="text-lg font-semibold">
+                  Control panel repair
+                </span>
+              </li>
+            </ul>
+          </div>
           <p className="mb-2">
             Our experienced technicians can handle repairs for all types of
             microwave ovens, including solo, grill, and convection models. We
@@ -309,44 +317,46 @@ const ServiceDetailPage = () => {
       ],
       content: (
         <>
-          <h2 className="text-2xl text-orange-500 font-semibold mb-4">
-            Washing Machine Service
-          </h2>
-          <p className="mb-2">
-            A malfunctioning washing machine can cause significant
-            inconvenience. At Sai Service Centre, we offer prompt and dependable
-            repair services for all types of washing machines.
-          </p>
-          <ul className="bg-white rounded-lg shadow-lg overflow-hidden border border-gray-200">
-            <li className="px-6 py-4 border-b border-gray-200 flex items-center space-x-3 hover:bg-gray-50 transition-all">
-              <FaTools className="h-6 w-6 text-blue-500" />
-              <span className="text-lg font-semibold">
-                Diagnosis of washing machine problems
-              </span>
-            </li>
-            <li className="px-6 py-4 border-b border-gray-200 flex items-center space-x-3 hover:bg-gray-50 transition-all">
-              <FaCog className="h-6 w-6 text-green-500" />
-              <span className="text-lg font-semibold">
-                Repair and replacement of motors, pumps, and belts
-              </span>
-            </li>
-            <li className="px-6 py-4 border-b border-gray-200 flex items-center space-x-3 hover:bg-gray-50 transition-all">
-              <FaWater className="h-6 w-6 text-blue-500" />
-              <span className="text-lg font-semibold">
-                Fixing drainage issues
-              </span>
-            </li>
-            <li className="px-6 py-4 border-b border-gray-200 flex items-center space-x-3 hover:bg-gray-50 transition-all">
-              <FaDrum className="h-6 w-6 text-yellow-500" />
-              <span className="text-lg font-semibold">Drum repair</span>
-            </li>
-            <li className="px-6 py-4 flex items-center space-x-3 hover:bg-gray-50 transition-all">
-              <FaRegKeyboard className="h-6 w-6 text-red-500" />
-              <span className="text-lg font-semibold">
-                Control panel repair
-              </span>
-            </li>
-          </ul>
+          <div className="border border-blue-500/30 rounded-lg p-2 shadow-lg">
+            <h2 className="text-2xl text-orange-500 font-semibold mb-4">
+              Washing Machine Service
+            </h2>
+            <p className="my-5">
+              A malfunctioning washing machine can cause significant
+              inconvenience. At Sai Service Centre, we offer prompt and
+              dependable repair services for all types of washing machines.
+            </p>
+            <ul className="bg-white my-5 rounded-lg shadow-lg overflow-hidden border border-gray-200">
+              <li className="px-6 py-4 border-b border-gray-200 flex items-center space-x-3 hover:bg-gray-50 transition-all">
+                <FaTools className="h-6 w-6 text-blue-500" />
+                <span className="text-lg font-semibold">
+                  Diagnosis of washing machine problems
+                </span>
+              </li>
+              <li className="px-6 py-4 border-b border-gray-200 flex items-center space-x-3 hover:bg-gray-50 transition-all">
+                <FaCog className="h-6 w-6 text-green-500" />
+                <span className="text-lg font-semibold">
+                  Repair and replacement of motors, pumps, and belts
+                </span>
+              </li>
+              <li className="px-6 py-4 border-b border-gray-200 flex items-center space-x-3 hover:bg-gray-50 transition-all">
+                <FaWater className="h-6 w-6 text-blue-500" />
+                <span className="text-lg font-semibold">
+                  Fixing drainage issues
+                </span>
+              </li>
+              <li className="px-6 py-4 border-b border-gray-200 flex items-center space-x-3 hover:bg-gray-50 transition-all">
+                <FaDrum className="h-6 w-6 text-yellow-500" />
+                <span className="text-lg font-semibold">Drum repair</span>
+              </li>
+              <li className="px-6 py-4 flex items-center space-x-3 hover:bg-gray-50 transition-all">
+                <FaRegKeyboard className="h-6 w-6 text-red-500" />
+                <span className="text-lg font-semibold">
+                  Control panel repair
+                </span>
+              </li>
+            </ul>
+          </div>
           <p className="mb-2">
             Our technicians are trained to handle both top-loading and
             front-loading washing machines. We aim to provide efficient and
@@ -365,6 +375,7 @@ const ServiceDetailPage = () => {
 
   const { serviceId } = useParams();
   const service = services.find((s) => s.id === serviceId);
+  const navigate = useNavigate();
 
   if (!service) {
     return (
@@ -406,14 +417,14 @@ const ServiceDetailPage = () => {
             )}
             {service.keywords && (
               <div className="mt-4 text-sm text-gray-500 dark:text-gray-400">
-                Keywords: {service.keywords.join(", ")}
+                {service.keywords.join(", ")}
               </div>
             )}
           </div>
 
           {/* Content Section */}
           <div>
-            <div className="prose prose-lg dark:prose-invert space-y-5 mb-8">
+            <div className="prose prose-lg dark:prose-invert space-y-10 mb-8">
               {service.content}{" "}
               {/* Using Tailwind's Prose for better typography */}
               <p className="text-gray-600  mt-6">{service.description}</p>
@@ -422,7 +433,7 @@ const ServiceDetailPage = () => {
             {/* Booking Button */}
             <div className="flex justify-start">
               <button
-                onClick={() => alert("Booking request sent!")}
+                onClick={() => navigate("/contact")}
                 className="inline-flex cursor-pointer items-center space-x-1 px-6 py-3 border border-transparent shadow-sm text-base font-medium rounded-md text-white bg-orange-500 hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition duration-300"
               >
                 <FaArrowRight />

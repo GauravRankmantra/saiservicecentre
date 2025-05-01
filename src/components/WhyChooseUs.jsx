@@ -1,102 +1,74 @@
 import React from "react";
+import { FaBolt, FaTools, FaCogs, FaShieldAlt, FaTags } from "react-icons/fa";
 
-import why from "../assets/why.png"
+const features = [
+  {
+    icon: <FaBolt className="text-blue-600 text-3xl" />,
+    title: "Rapid Response Team",
+    description:
+      "Our technicians are on standby and ready to reach your doorstep swiftly to address your AC issues without delay.",
+  },
+  {
+    icon: <FaTools className="text-blue-600 text-3xl" />,
+    title: "Certified Repair Experts",
+    description:
+      "No matter the brand — LG, Samsung, Voltas — our certified experts have the skills to handle all AC repairs flawlessly.",
+  },
+  {
+    icon: <FaCogs className="text-blue-600 text-3xl" />,
+    title: "Genuine Spare Parts",
+    description:
+      "We only install original manufacturer-approved parts to ensure durability and high performance of your appliance.",
+  },
+  {
+    icon: <FaShieldAlt className="text-blue-600 text-3xl" />,
+    title: "Transparent Service Process",
+    description:
+      "We keep things honest — we’ll explain the problem in detail and recommend only what’s necessary. No hidden charges!",
+  },
+  {
+    icon: <FaTags className="text-blue-600 text-3xl" />,
+    title: "Budget-Friendly Pricing",
+    description:
+      "Top-tier service doesn't have to cost a fortune. We offer competitive and affordable pricing for all repairs.",
+  },
+];
 
 const WhyChooseUs = () => {
   return (
-    <div className="bg-gray-50 md:w-[80%] w-full p-2 mx-auto py-16">
-      <div className="container mx-auto px-4 md:px-8 lg:px-12 xl:px-16">
-        {/* Section Title */}
-        <div className="flex justify-center flex-col text-center mb-8">
-          <h2 className="text-2xl font-bold text-gray-800 mb-2">
-            Why Choose Us
+    <section className="bg-gray-50 w-full py-16 px-4 sm:px-6 lg:px-20">
+      <div className="max-w-7xl mx-auto">
+        {/* Section Header */}
+        <div className="text-center mb-12">
+          <h2 className="text-3xl sm:text-4xl font-bold text-gray-800">
+            Why Choose <span className="text-orange-500">Sai Service Centre</span>
           </h2>
-
-          <div className="w-12 h-1 bg-orange-500 mx-auto mt-4 rounded-full"></div>
+          <p className="mt-4 text-gray-600 text-base sm:text-lg max-w-xl mx-auto">
+            Experience unmatched reliability, speed, and value with our trusted AC service solutions in Dehradun.
+          </p>
         </div>
 
-        {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {/* RO Repair Services */}
-          <div className="bg-white group rounded-lg shadow-md p-6 flex flex-col items-center text-center">
-            <div className="w-12 h-12 rounded-full group-hover:bg-orange-100  bg-gray-100 flex items-center justify-center mb-4">
-              <img src={why} className="w-10 h-10"></img>
+        {/* Feature Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          {features.map((feature, index) => (
+            <div
+              key={index}
+              className="bg-white p-6 rounded-xl shadow hover:shadow-lg transition duration-300 flex flex-col items-center text-center"
+            >
+              <div className="mb-4 bg-blue-100 p-4 rounded-full">
+                {feature.icon}
+              </div>
+              <h3 className="text-lg font-semibold text-gray-800 mb-2">
+                {feature.title}
+              </h3>
+              <p className="text-sm text-gray-600 leading-relaxed">
+                {feature.description}
+              </p>
             </div>
-            <h3 className="text-lg font-semibold text-gray-800 mb-2 group-hover:text-orange-600">
-              Fast Services
-            </h3>
-            <p className="text-gray-600 text-sm">
-              Just call us at the provided number and tell us about the problem
-              in your AC, our technicians will be there at your doorstep. We do
-              not believe in any delay.
-            </p>
-          </div>
-
-          {/* AC Repair Services */}
-          <div className="bg-white group rounded-lg shadow-md p-6 flex flex-col items-center text-center">
-            <div className="w-12 h-12 rounded-full group-hover:bg-orange-100  bg-gray-100 flex items-center justify-center mb-4">
-              <img src={why} className="w-10 h-10"></img>
-            </div>
-            <h3 className="text-lg font-semibold text-gray-800 mb-2 group-hover:text-orange-600">
-              Skilled Technicians
-            </h3>
-            <p className="text-gray-600 text-sm">
-              Our technicians are so skilled that they are capable of repairing
-              any brand of AC. Whether you have a Haier AC or Samsung AC, our
-              technician will solve the matter for you.
-            </p>
-          </div>
-
-          {/* Refrigerator Repair Services */}
-          <div className="bg-white group rounded-lg shadow-md p-6 flex flex-col items-center text-center">
-            <div className="w-12 h-12 rounded-full group-hover:bg-orange-100  flex items-center justify-center mb-4">
-              <img src={why} className="w-10 h-10"></img>
-            </div>
-            <h3 className="text-lg font-semibold group-hover:text-orange-600  mb-2">
-              Original Parts
-            </h3>
-            <p className="text-gray-600 text-sm">
-              In case of spare parts failure in AC, we will always replace the
-              faulty part with an original one. It will ensure the longevity of
-              the AC.
-            </p>
-          </div>
-
-          {/* Microwave-Oven Repair Services */}
-          <div className="bg-white group rounded-lg shadow-md p-6 flex flex-col items-center text-center">
-            <div className="w-12 h-12 rounded-full group-hover:bg-orange-100  bg-gray-100 flex items-center justify-center mb-4">
-              <img src={why} className="w-10 h-10"></img>
-            </div>
-            <h3 className="text-lg font-semibold text-gray-800 mb-2 group-hover:text-orange-600">
-              Honesty and Transparency
-            </h3>
-            <p className="text-gray-600 text-sm">
-              Honesty flows in our veins. We will show you the exact problem in
-              your AC and then we will suggest any changes to your AC.
-            </p>
-          </div>
-
-          {/* Washing Machine Repair Services */}
-          <div className="bg-white group rounded-lg shadow-md p-6 flex flex-col items-center text-center">
-            <div className="w-12 h-12 rounded-full group-hover:bg-orange-100  bg-gray-100 flex items-center justify-center mb-4">
-              <img src={why} className="w-10 h-10"></img>
-            </div>
-            <h3 className="text-lg font-semibold text-gray-800 mb-2 group-hover:text-orange-600">
-              Affordable Rates
-            </h3>
-            <p className="text-gray-600 text-sm">
-              If you have booked Sai Service Centre for your AC repair in
-              Dehradun, then drop all worries regarding charges. When it comes
-              to pricing, we charge the lowest among all technicians in
-              Dehradun.
-            </p>
-          </div>
-
-          {/* Empty Slot (for alignment if needed on larger screens) */}
-          <div className="hidden lg:block"></div>
+          ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

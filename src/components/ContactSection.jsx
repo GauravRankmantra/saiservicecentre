@@ -61,7 +61,7 @@ const ContactSection = () => {
   };
 
   return (
-    <section className="py-12 px-4 md:px-16 md:w-[80%] border-t border-gray-400 mx-auto bg-white">
+    <section className="py-12 px-4 md:px-16 md:w-[80%]  mx-auto bg-white">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-10">
         {/* Left side - Text and Contact Info */}
         <div className="flex-1">
@@ -83,15 +83,15 @@ const ContactSection = () => {
           </p>
 
           <div className="space-y-4">
-            <div className="flex items-center gap-3 text-orange-500">
+            <div className="flex items-center gap-3 text-blue-600">
               <Phone className="w-5 h-5" />
               <span className="text-gray-700">9897272757, 9627927945</span>
             </div>
-            <div className="flex items-center gap-3 text-orange-500">
+            <div className="flex items-center gap-3 text-blue-600">
               <Mail className="w-5 h-5" />
               <span className="text-gray-700">tarun.saiservices@gmail.com</span>
             </div>
-            <div className="flex items-center gap-3 text-orange-500">
+            <div className="flex items-center gap-3 text-blue-600">
               <MapPin className="w-5 h-5" />
               <span className="text-gray-700">
                 31/2 Govind Garh, Opposite Rainbow School
@@ -168,7 +168,7 @@ const ContactSection = () => {
               disabled={isSubmitting}
               className="w-full py-3 bg-orange-500 text-white font-semibold rounded-md hover:bg-orange-600 disabled:bg-gray-400"
             >
-              {isSubmitting ? "Submitting..." : "Get Quote"}
+              {isSubmitting ? "Sending..." : "Send"}
             </button>
           </form>
         </div>

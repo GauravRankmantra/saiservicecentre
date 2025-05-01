@@ -29,10 +29,10 @@ const Contact = () => {
           <div className="-mx-4 flex flex-wrap lg:justify-between">
             <div className="w-full px-4 lg:w-1/2 xl:w-6/12">
               <div className="mb-12 max-w-[570px] lg:mb-0">
-                <span className="mb-4 block text-base text-orange-500 font-semibold text-primary">
+                <span className="mb-4 block text-base text-blue-950 font-semibold text-primary">
                   Contact Us
                 </span>
-                <h2 className="mb-6 text-[32px] font-bold uppercase text-orange-500 sm:text-[40px] lg:text-[36px] xl:text-[40px]">
+                <h2 className="mb-6 text-[32px] font-bold uppercase text-blue-800 sm:text-[40px] lg:text-[36px] xl:text-[40px]">
                   GET IN TOUCH WITH US
                 </h2>
                 <p className="mb-9 text-base leading-relaxed dark:text-dark-6">
@@ -164,7 +164,7 @@ const Contact = () => {
                   <div>
                     <button
                       type="submit"
-                      className="w-full cursor-pointer rounded border border-primary bg-orange-500 p-3 text-white transition hover:bg-opacity-90"
+                      className="w-full cursor-pointer rounded border border-primary bg-blue-600 p-3 text-white transition hover:bg-opacity-90"
                     >
                       Send Message
                     </button>

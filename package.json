@@ -17,6 +17,7 @@
     "aos": "^2.3.4",
     "autoprefixer": "^10.4.21",
     "emailjs-com": "^3.2.0",
+    "framer-motion": "^12.9.2",
     "globals": "^16.0.0",
     "lucide-react": "^0.503.0",
     "postcss": "^8.5.3",
@@ -25,6 +26,7 @@
     "react-hot-toast": "^2.5.2",
     "react-icons": "^5.5.0",
     "react-router-dom": "^7.5.0",
+    "swiper": "^11.2.6",
     "tailwindcss": "^4.1.4"
   },
   "devDependencies": {
